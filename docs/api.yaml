@@ -1,0 +1,352 @@
+openapi: 3.0.0
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/duynhanf/arent-health-api/1.0.0
+info:
+  description: API for Healthy App
+  version: "1.0.0"
+  title: Healthy API
+  contact:
+    email: duynhanf@gmail.com
+  license:
+    name: Apache 2.0
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+tags:
+  - name: admins
+    description: Secured Admin-only calls
+  - name: developers
+    description: Operations available to regular developers
+paths:
+  /foods:
+    get:
+      tags:
+        - developers
+      summary: searches inventory
+      operationId: searchInventory
+      description: |
+        By passing in the appropriate options, you can search for
+        available inventory in the system
+      responses:
+        "200":
+          description: search results matching criteria
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/FoodHistories"
+                example:
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    imageUrl: /images/d01.jpg
+                    createdAt: 2022-11-24T09:12:33.001Z
+                    foodType: Morning
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    imageUrl: /images/d02.jpg
+                    createdAt: 2022-11-24T09:12:33.001Z
+                    foodType: Snack
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    imageUrl: /images/l01.jpg
+                    createdAt: 2022-11-24T09:12:33.001Z
+                    foodType: Lunch
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    imageUrl: /images/l02.jpg
+                    createdAt: 2022-11-24T09:12:33.001Z
+                    foodType: Dinner
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    imageUrl: /images/l03.jpg
+                    createdAt: 2022-11-24T09:12:33.001Z
+                    foodType: Snack
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    imageUrl: /images/m01.jpg
+                    createdAt: 2022-11-24T09:12:33.001Z
+                    foodType: Dinner
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    imageUrl: /images/m02.jpg
+                    createdAt: 2022-11-24T09:12:33.001Z
+                    foodType: Lunch
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    imageUrl: /images/m03.jpg
+                    createdAt: 2022-11-24T09:12:33.001Z
+                    foodType: Snack
+        "400":
+          description: bad input parameter
+  /columns:
+    get:
+      tags:
+        - developers
+      summary: searches columns
+      operationId: getColumn
+      description: |
+        By passing in the appropriate options, you can search for
+        available inventory in the system
+      responses:
+        "200":
+          description: search results matching criteria
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Columns"
+                example:
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    imageUrl: /images/d01.jpg
+                    createdAt: 2022-11-24T09:12:33.001Z
+                    description: 魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリット
+                    tags: ["魚料理", "和食", "DHA"]
+
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    imageUrl: /images/d02.jpg
+                    createdAt: 2022-11-24T09:12:33.001Z
+                    description: 魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリット
+                    tags: ["魚料理", "和食", "DHA"]
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    imageUrl: /images/l01.jpg
+                    createdAt: 2022-11-24T09:12:33.001Z
+                    description: 魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリット
+                    tags: ["魚料理", "和食", "DHA"]
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    imageUrl: /images/l02.jpg
+                    createdAt: 2022-11-24T09:12:33.001Z
+                    description: 魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリット
+                    tags: ["魚料理", "和食", "DHA"]
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    imageUrl: /images/l03.jpg
+                    createdAt: 2022-11-24T09:12:33.001Z
+                    description: 魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリット
+                    tags: ["魚料理", "和食", "DHA"]
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    imageUrl: /images/m01.jpg
+                    createdAt: 2022-11-24T09:12:33.001Z
+                    description: 魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリット
+                    tags: ["魚料理", "和食", "DHA"]
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    imageUrl: /images/m02.jpg
+                    createdAt: 2022-11-24T09:12:33.001Z
+                    description: 魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリット
+                    tags: ["魚料理", "和食", "DHA"]
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    imageUrl: /images/m03.jpg
+                    createdAt: 2022-11-24T09:12:33.001Z
+                    description: 魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリット
+                    tags: ["魚料理", "和食", "DHA"]
+        "400":
+          description: bad input parameter
+  /exercises:
+    get:
+      tags:
+        - developers
+      summary: searches exercises
+      operationId: getExercise
+      description: |
+        By passing in the appropriate options, you can search for
+        available inventory in the system
+      responses:
+        "200":
+          description: search results matching criteria
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Exercises"
+                example:
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    title: 家事全般（立位・軽い）
+                    recordedAt: 2022-11-24T09:12:33.001Z
+                    burnedCalo: 260
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    title: 家事全般（立位・軽い）
+                    recordedAt: 2022-11-24T09:12:33.001Z
+                    burnedCalo: 123
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    title: 家事全般（立位・軽い）
+                    recordedAt: 2022-11-24T09:12:33.001Z
+                    burnedCalo: 200
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    title: 家事全般（立位・軽い）
+                    recordedAt: 2022-11-24T09:12:33.001Z
+                    burnedCalo: 26
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    title: 家事全般（立位・軽い）
+                    recordedAt: 2022-11-24T09:12:33.001Z
+                    burnedCalo: 26
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    title: 家事全般（立位・軽い）
+                    recordedAt: 2022-11-24T09:12:33.001Z
+                    burnedCalo: 26
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    title: 家事全般（立位・軽い）
+                    recordedAt: 2022-11-24T09:12:33.001Z
+                    burnedCalo: 26
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    title: 家事全般（立位・軽い）
+                    recordedAt: 2022-11-24T09:12:33.001Z
+                    burnedCalo: 26
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    title: 家事全般（立位・軽い）
+                    recordedAt: 2022-11-24T09:12:33.001Z
+                    burnedCalo: 26
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    title: 家事全般（立位・軽い）
+                    recordedAt: 2022-11-24T09:12:33.001Z
+                    burnedCalo: 26
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    title: 家事全般（立位・軽い）
+                    recordedAt: 2022-11-24T09:12:33.001Z
+                    burnedCalo: 26
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    title: 家事全般（立位・軽い）
+                    recordedAt: 2022-11-24T09:12:33.001Z
+                    burnedCalo: 26
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    title: 家事全般（立位・軽い）
+                    recordedAt: 2022-11-24T09:12:33.001Z
+                    burnedCalo: 26
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    title: 家事全般（立位・軽い）
+                    recordedAt: 2022-11-24T09:12:33.001Z
+                    burnedCalo: 26
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    title: 家事全般（立位・軽い）
+                    recordedAt: 2022-11-24T09:12:33.001Z
+                    burnedCalo: 26
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    title: 家事全般（立位・軽い）
+                    recordedAt: 2022-11-24T09:12:33.001Z
+                    burnedCalo: 26
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    title: 家事全般（立位・軽い）
+                    recordedAt: 2022-11-24T09:12:33.001Z
+                    burnedCalo: 30
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    title: 家事全般（立位・軽い）
+                    recordedAt: 2022-11-24T09:12:33.001Z
+                    burnedCalo: 26
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    title: 家事全般（立位・軽い）
+                    recordedAt: 2022-11-24T09:12:33.001Z
+                    burnedCalo: 26
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    title: 家事全般（立位・軽い）
+                    recordedAt: 2022-11-24T09:12:33.001Z
+                    burnedCalo: 26
+        "400":
+          description: bad input parameter
+  /diaries:
+    get:
+      tags:
+        - developers
+      summary: searches diaries
+      operationId: getDiaries
+      description: |
+        By passing in the appropriate options, you can search for
+        available inventory in the system
+      responses:
+        "200":
+          description: search results matching criteria
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Exercises"
+                example:
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    title: 私の日記の記録が一部表示されます
+                    recordedAt: 2022-11-24T09:12:33.001Z
+                    description: テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    title: 私の日記の記録が一部表示されます
+                    recordedAt: 2022-11-24T09:12:33.001Z
+                    description: テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    title: 私の日記の記録が一部表示されます
+                    recordedAt: 2022-11-24T09:12:33.001Z
+                    description: テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    title: 私の日記の記録が一部表示されます
+                    recordedAt: 2022-11-24T09:12:33.001Z
+                    description: テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    title: 私の日記の記録が一部表示されます
+                    recordedAt: 2022-11-24T09:12:33.001Z
+                    description: テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    title: 私の日記の記録が一部表示されます
+                    recordedAt: 2022-11-24T09:12:33.001Z
+                    description: テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    title: 私の日記の記録が一部表示されます
+                    recordedAt: 2022-11-24T09:12:33.001Z
+                    description: テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                  - id: d290f1ee-6c54-4b01-90e6-d701748f0851
+                    title: 私の日記の記録が一部表示されます
+                    recordedAt: 2022-11-24T09:12:33.001Z
+                    description: テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+
+        "400":
+          description: bad input parameter
+components:
+  schemas:
+    FoodHistories:
+      type: object
+      required:
+        - id
+        - imageUrl
+        - foodType
+        - createdAt
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: d290f1ee-6c54-4b01-90e6-d701748f0851
+        imageUrl:
+          type: string
+        foodType:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+          example: "2016-08-29T09:12:33.001Z"
+    Columns:
+      type: object
+      required:
+        - id
+        - imageUrl
+        - createdAt
+        - description
+        - tags
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: d290f1ee-6c54-4b01-90e6-d701748f0851
+        imageUrl:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+          example: "2016-08-29T09:12:33.001Z"
+        description:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+    Exercises:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: d290f1ee-6c54-4b01-90e6-d701748f0851
+        title:
+          type: string
+        recordedAt:
+          type: string
+          format: date-time
+          example: "2016-08-29T09:12:33.001Z"
+        burnedCalo:
+          type: string
